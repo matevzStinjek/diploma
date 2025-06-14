@@ -1,0 +1,35 @@
+\chapter{Design and Implementation of the Solution}
+\label{cha:solution_design}
+
+\section{System Architecture}
+% Provide a high-level diagram of your setup.
+% e.g., Event source -> Message Queue -> KEDA -> Application Pods
+
+\section{Tools and Technologies}
+% List the specific tools you used.
+% - Kubernetes distribution (e.g., Minikube, Docker Desktop, GKE)
+% - Message Broker (e.g., RabbitMQ)
+% - Application language/framework (e.g., Python, Go, Node.js)
+% - KEDA version
+
+\section{Test Application}
+\subsection{Application Logic}
+% Describe what your sample application does.
+% e.g., a worker that processes messages from a queue.
+\subsection{Dockerfile}
+% Include and explain the Dockerfile for your application.
+
+\section{Environment Setup}
+\subsection{Kubernetes Cluster Setup}
+% How did you set up the cluster?
+\subsection{Deploying the Event Source}
+% e.g., RabbitMQ deployment YAML.
+\subsection{Deploying the Application}
+% Deployment YAML for your application.
+
+\section{Configuring KEDA for Autoscaling}
+\subsection{The \texttt{ScaledObject} Configuration}
+% Show and explain your ScaledObject YAML.
+% Discuss the key parameters: polling interval, cooldown period, triggers, etc.
+\subsection{Verifying the Setup}
+% How did you check that KEDA was working? `kubectl get hpa`, etc. 

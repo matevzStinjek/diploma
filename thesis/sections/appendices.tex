@@ -1,0 +1,45 @@
+\chapter{Appendices}
+
+\section{Source Code for the Test Application}
+\label{app:source_code}
+% Include your application source code here.
+% Use the lstlisting environment.
+\begin{lstlisting}[language=Python, caption={Sample Python worker.}]
+import time
+import os
+
+def main():
+    print("Processing message...")
+    time.sleep(1)
+    print("Message processed.")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+
+\section{Kubernetes Deployment YAML}
+\label{app:yaml}
+% Include your Kubernetes YAML files here.
+\begin{lstlisting}[language=yaml, caption={Deployment YAML for the test application.}]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-worker
+  template:
+    metadata:
+      labels:
+        app: python-worker
+    spec:
+      containers:
+      - name: worker
+        image: your-repo/python-worker:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+\end{lstlisting} 

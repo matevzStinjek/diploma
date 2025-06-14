@@ -1,0 +1,33 @@
+\chapter{Evaluation and Results}
+\label{cha:evaluation}
+
+\section{Test Environment}
+% Reiterate the hardware and software specifications.
+% This is important for reproducibility.
+
+\section{Evaluation Metrics}
+% What are you measuring?
+% - Scaling time (from event to new pod running)
+% - Resource utilization (CPU/memory of pods)
+% - Queue length or other trigger metric
+% - Cost savings (if applicable)
+
+\section{Test Scenarios}
+% Describe the experiments you ran.
+\subsection{Scenario 1: Sudden Burst of Traffic}
+% What happens when a large number of events arrive at once?
+\subsection{Scenario 2: Gradual Increase in Traffic}
+% How does the system scale with a slow, steady increase in load?
+\subsection{Scenario 3: Scaling to Zero}
+% Demonstrate and measure the scale-down behavior when there are no events.
+
+\section{Presenting the Results}
+% Use graphs and tables to show your data.
+% For each scenario, present the metrics you defined.
+% Example: A graph showing queue length vs. number of pods over time.
+
+\section{Analysis of Results}
+% What do the results mean?
+% Did KEDA perform as expected?
+% What are the trade-offs you observed?
+% Compare the results between different scenarios. 
