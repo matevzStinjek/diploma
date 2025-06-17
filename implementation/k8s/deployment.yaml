@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keda-go-worker-deployment
+  labels:
+    app: keda-go-worker
+spec:
+  # NOTE: This 'replicas' field is for the BASELINE test only.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keda-go-worker
+  template:
+    metadata:
+      labels:
+        app: keda-go-worker
+    spec:
+      containers:
+        - name: worker
+          image: keda-go-worker:v1 # The name of the image you built
+          imagePullPolicy: IfNotPresent # This policy is crucial for using local images with Minikube
+          env:
+            - name: RABBITMQ_URL
+              value: "amqp://user:PASSWORD@rabbitmq.default.svc.cluster.local:5672/"
